@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Caatinga</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="navbar">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Logo Netflix">
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="#">Séries</a></li>
+      <li><a href="#">Filmes</a></li>
+      <li><a href="#">Mais Recentes</a></li>
+      <li><a href="#">Minha Lista</a></li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <h1>Quiz sobre a Caatinga</h1>
+    <form id="quiz-form">
+      <div class="question">
+        <p>1. Qual é a principal característica climática da Caatinga?</p>
+        <input type="radio" name="q1" value="semiarido"> Clima semiárido<br>
+        <input type="radio" name="q1" value="temperado"> Clima temperado<br>
+        <input type="radio" name="q1" value="tropical"> Clima tropical<br>
+      </div>
+
+      <div class="question">
+        <p>2. O que significa "Caatinga" na língua indígena?</p>
+        <input type="radio" name="q2" value="mataBranca"> Mata Branca<br>
+        <input type="radio" name="q2" value="mataVerde"> Mata Verde<br>
+        <input type="radio" name="q2" value="florestaGrande"> Floresta Grande<br>
+      </div>
+
+      <div class="question">
+        <p>3. Qual destes animais é típico da Caatinga?</p>
+        <input type="radio" name="q3" value="asaBranca"> Asa-branca<br>
+        <input type="radio" name="q3" value="morcego"> Morcego<br>
+        <input type="radio" name="q3" value="capivara"> Capivara<br>
+      </div>
+
+      <div class="question">
+        <p>4. Quais são as duas estações da Caatinga?</p>
+        <input type="radio" name="q4" value="secaChuva"> Quente e seca, e quente com chuvas<br>
+        <input type="radio" name="q4" value="primaveraVerao"> Primavera e verão<br>
+        <input type="radio" name="q4" value="invernoOutono"> Inverno e outono<br>
+      </div>
+
+      <div class="question">
+        <p>5. Qual é a principal vegetação encontrada na Caatinga?</p>
+        <input type="radio" name="q5" value="arbustiva"> Vegetação arbustiva e espinhosa<br>
+        <input type="radio" name="q5" value="mangue"> Manguezal<br>
+        <input type="radio" name="q5" value="densa"> Vegetação densa e fechada<br>
+      </div>
+
+      <button type="submit">Enviar Respostas</button>
+    </form>
+
+    <div id="result" style="display: none; margin-top: 20px;">
+      <h2>Resultado do Quiz</h2>
+      <p id="score"></p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("quiz-form").onsubmit = function(e) {
+      e.preventDefault();
+
+      // Respostas corretas para cada pergunta
+      const correctAnswers = {
+        q1: "semiarido",
+        q2: "mataBranca",
+        q3: "asaBranca",
+        q4: "secaChuva",
+        q5: "arbustiva"
+      };
+
+      // Inicializa o contador de pontuação
+      let score = 0;
+
+      // Verifica cada resposta do usuário
+      for (const [question, correctAnswer] of Object.entries(correctAnswers)) {
+        const userAnswer = document.querySelector(`input[name="${question}"]:checked`);
+        if (userAnswer && userAnswer.value === correctAnswer) {
+          score++;
+        }
+      }
+
+      // Exibe o resultado
+      const resultDiv = document.getElementById("result");
+      const scoreParagraph = document.getElementById("score");
+      resultDiv.style.display = "block";
+      scoreParagraph.textContent = `Você acertou ${score} de 5 questões.`;
+    };
+  </script>
+</body>
+</html>

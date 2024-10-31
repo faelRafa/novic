@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Pampa</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="navbar">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Logo Netflix">
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="#">Séries</a></li>
+      <li><a href="#">Filmes</a></li>
+      <li><a href="#">Mais Recentes</a></li>
+      <li><a href="#">Minha Lista</a></li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <h1>Quiz sobre o Pampa</h1>
+    <form id="quiz-form">
+      <div class="question">
+        <p>1. Em qual estado brasileiro o bioma Pampa está principalmente localizado?</p>
+        <input type="radio" name="q1" value="RS"> Rio Grande do Sul<br>
+        <input type="radio" name="q1" value="SP"> São Paulo<br>
+        <input type="radio" name="q1" value="MG"> Minas Gerais<br>
+      </div>
+      
+      <div class="question">
+        <p>2. Qual é a principal característica da vegetação do Pampa?</p>
+        <input type="radio" name="q2" value="rasteira"> Vegetação rasteira<br>
+        <input type="radio" name="q2" value="densa"> Vegetação densa<br>
+        <input type="radio" name="q2" value="floresta"> Florestas tropicais<br>
+      </div>
+
+      <div class="question">
+        <p>3. Qual animal é comumente encontrado no Pampa?</p>
+        <input type="radio" name="q3" value="tatu"> Tatu-peba<br>
+        <input type="radio" name="q3" value="jacare"> Jacaré-do-papo-amarelo<br>
+        <input type="radio" name="q3" value="gato"> Gato-mourisco<br>
+      </div>
+
+      <div class="question">
+        <p>4. O Pampa é comparável a qual tipo de paisagem internacional?</p>
+        <input type="radio" name="q4" value="pradarias"> Pradarias<br>
+        <input type="radio" name="q4" value="desertos"> Desertos<br>
+        <input type="radio" name="q4" value="florestas"> Florestas temperadas<br>
+      </div>
+
+      <div class="question">
+        <p>5. A cultura tradicional do Pampa é fortemente associada a qual grupo?</p>
+        <input type="radio" name="q5" value="gaucha"> Cultura gaúcha<br>
+        <input type="radio" name="q5" value="nordestina"> Cultura nordestina<br>
+        <input type="radio" name="q5" value="indigena"> Cultura indígena<br>
+      </div>
+
+      <button type="submit">Enviar Respostas</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("quiz-form").onsubmit = function(e) {
+      e.preventDefault();
+      alert("Quiz enviado! Confira suas respostas!");
+    };
+  </script>
+</body>
+</html>
